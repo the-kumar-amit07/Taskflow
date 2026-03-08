@@ -1,0 +1,20 @@
+/* FILE: src/styles/animations.css */
+
+/**
+ * Custom CSS Animations
+ *
+ * Reusable animations used across the application.
+ * These supplement Tailwind's built-in animations.
+ *
+ * Animations include:
+ * - Fade in/out
+ * - Slide in from sides
+ * - Scale up (for modals)
+ * - Skeleton shimmer effect
+ * - Spin (for loading spinners)
+ *
+ * Will be populated in Step 5 (Tailwind configuration)
+ * and as components are built.
+ */
+
+/* Placeholder — will be populated as needed */

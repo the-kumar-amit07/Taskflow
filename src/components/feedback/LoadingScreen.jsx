@@ -1,4 +1,3 @@
-
 // FILE: src/components/feedback/LoadingScreen.jsx
 
 /**
@@ -17,9 +16,8 @@
 
 export default function LoadingScreen() {
     return (
-        <div role="status" aria-label="loading application">
-            <h1>404</h1>
-            <p>Page not found</p>
+        <div role="status" aria-label="Loading application">
+        <p>Loading TaskFlow...</p>
         </div>
-    )
+    );
 }

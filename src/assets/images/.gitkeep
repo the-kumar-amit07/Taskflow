@@ -1,0 +1,5 @@
+# FILE: src/assets/images/.gitkeep
+
+# This file exists solely to ensure Git tracks this empty directory.
+# Git does not track empty folders. Adding .gitkeep is a common convention.
+# This file can be deleted once real images are added to this folder.
