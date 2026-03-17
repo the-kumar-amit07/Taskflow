@@ -1,20 +1,13 @@
 /* FILE: src/styles/animations.css */
 
 /**
- * Custom CSS Animations
+ * Additional CSS Animations
  *
- * Reusable animations used across the application.
- * These supplement Tailwind's built-in animations.
+ * Most animations are defined in tailwind.config.js (keyframes + animation).
+ * This file holds complex animations that are easier to write in CSS
+ * than in the Tailwind config's JavaScript object format.
  *
- * Animations include:
- * - Fade in/out
- * - Slide in from sides
- * - Scale up (for modals)
- * - Skeleton shimmer effect
- * - Spin (for loading spinners)
- *
- * Will be populated in Step 5 (Tailwind configuration)
- * and as components are built.
+ * Currently empty — animations are handled by tailwind.config.js.
+ * This file exists as a designated place for any future CSS-only
+ * animations that are too complex for the config file.
  */
-
-/* Placeholder — will be populated as needed */

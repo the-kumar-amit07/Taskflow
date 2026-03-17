@@ -1,68 +1,198 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+/* FILE: src/styles/index.css */
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+/**
+ * Global Styles — Tailwind CSS Entry Point
+ *
+ * This file is processed by PostCSS (Tailwind + Autoprefixer).
+ * The three @tailwind directives inject Tailwind's generated CSS.
+ *
+ * WHAT EACH DIRECTIVE DOES:
+ * ──────────────────────────
+ * @tailwind base;
+ *   → Injects Tailwind's CSS reset (called "Preflight")
+ *   → Normalizes browser defaults (like our manual reset from Step 2,
+ *     but more comprehensive)
+ *   → Sets box-sizing: border-box on everything
+ *   → Removes default margins, paddings, list styles
+ *
+ * @tailwind components;
+ *   → Injects any custom component classes defined with @layer components
+ *   → This is where multi-class patterns can be grouped
+ *
+ * @tailwind utilities;
+ *   → Injects ALL utility classes (bg-*, text-*, flex, grid, etc.)
+ *   → Only classes used in your files are included (tree-shaking)
+ *
+ * ORDER MATTERS:
+ *   base → components → utilities
+ *   This ensures utilities can override components,
+ *   and components can override base styles.
+ *   This is the CSS cascade working intentionally.
+ */
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
+/*  ============================================
+    BASE LAYER — Global defaults
+    ============================================
+    @layer base tells Tailwind these styles have "base" priority.
+    They can be overridden by component or utility classes.
+*/
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+@layer base {
+  /**
+   * HTML root element styles
+   *
+   * scroll-behavior: smooth — enables smooth scrolling for anchor links
+   * But we only enable it if the user has not requested reduced motion.
+   * Tailwind's Preflight handles the font-size and box-sizing reset.
+   */
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
-  a:hover {
-    color: #747bff;
+  /**
+   * Body base styles
+   *
+   * We apply our design tokens here using Tailwind's @apply directive.
+   * @apply lets you use Tailwind utility classes inside CSS rules.
+   *
+   * WHY @apply here instead of className on <body>?
+   * Because <body> is in index.html, not in a React component.
+   * We COULD add classes to the <body> tag in index.html, but
+   * putting them here keeps all global styles in one file.
+   */
+  body {
+    @apply bg-surface font-sans text-content-primary antialiased;
+    @apply selection:bg-brand-100 selection:text-brand-900;
   }
-  button {
-    background-color: #f9f9f9;
+  /**
+   * Focus visible styles — Accessibility
+   *
+   * This creates a consistent focus ring for keyboard navigation.
+   * :focus-visible only shows the ring when the user is navigating
+   * with the keyboard (Tab key), NOT when clicking with a mouse.
+   *
+   * This is a WCAG accessibility requirement. Users who cannot use
+   * a mouse need to see which element is focused.
+   */
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand-500;
+  }
+  /**
+   * Smooth scrolling — but respect user preferences
+   */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  /**
+   * Reduced motion — Accessibility
+   *
+   * Disable all animations and transitions for users who
+   * have enabled "Reduce Motion" in their OS settings.
+   * This prevents motion sickness and seizures.
+   */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* ============================================
+    COMPONENT LAYER — Reusable patterns
+    ============================================
+    These are multi-utility patterns that we use repeatedly.
+    Using @layer components ensures they can be overridden by utilities.
+
+    IMPORTANT: Use these SPARINGLY. The whole point of Tailwind
+    is to use utilities directly. Only extract a component class
+    when a pattern is used 5+ times and would be painful to
+    update individually.
+*/
+@layer components {
+  /**
+   * Skeleton loading animation background
+   * Used by the Skeleton component for loading states.
+   */
+  .skeleton {
+    @apply animate-shimmer rounded bg-gray-200;
+    background-image: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.4) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background-size: 200% 100%;
+  }
+
+  /**
+   * Scrollbar styling — Thin, subtle scrollbars
+   * Matches modern SaaS design (Notion, Linear, Slack)
+   */
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: theme('colors.gray.300') transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: theme('colors.gray.300');
+    border-radius: 3px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: theme('colors.gray.400');
+  }
+}
+
+/* ============================================
+    UTILITY LAYER — Custom one-off utilities
+    ============================================
+    Custom utility classes that Tailwind does not provide.
+*/
+@layer utilities {
+    /**
+   * Text balance — Better text wrapping for headings
+   * Distributes text more evenly across lines.
+   */
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /**
+   * Hide scrollbar but keep scrolling functional.
+   * Used for horizontally scrolling board view.
+   */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /**
+   * Drag cursor — Used during drag and drop interactions
+   */
+  .cursor-grab {
+    cursor: grab;
+  }
+  .cursor-grabbing {
+    cursor: grabbing;
   }
 }

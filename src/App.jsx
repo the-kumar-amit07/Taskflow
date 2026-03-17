@@ -1,56 +1,118 @@
-// FILE: src/app/App.jsx
+// FILE: src/App.jsx
 
 /**
- * Root Application Component
+ * App Component — Tailwind CSS Verification
  *
- * This is the top-level component that wraps the entire application.
- * It will contain:
- * - Redux Provider (state management wrapper)
- * - Router Provider (routing wrapper)
- * - Auth state observer (check if user is logged in)
- * - Toast container (notification system)
- * - Error boundary (catch rendering errors)
- *
- * Think of this as the "main entrance" of a building — everything
- * flows through here.
- *
- * Will be fully implemented when we set up routing (Step 14)
- * and auth (Steps 30-41).
- *
- * For now, we re-export from the current src/App.jsx location.
+ * Temporarily using Tailwind utility classes to verify the setup.
+ * If you see styled content (colors, spacing, shadows), Tailwind is working.
+ * We will clean this up after verification.
  */
 
 function App() {
   return (
-    <div style={{padding:'2rem', fontFamily:'monospace'}}>
-      <h1>TaskFlow</h1>
-      <p>Project foundation is ready. Let&apos;s build something great.</p>
+    <div className="flex min-h-screen items-center justify-center bg-surface-sunken p-8">
+      <div className="w-full max-w-md space-y-6 rounded-xl bg-surface p-8 shadow-lg">
+        {/* App title with brand color */}
+        <div className="text-center">
+          <h1 className="text-3xl font-bold text-content-primary">
+            TaskFlow
+          </h1>
+          <p className="mt-2 text-sm text-content-secondary">
+            Project management for modern teams
+          </p>
+        </div>
 
-      <hr style={{ margin: '1rem 0' }} />
-      <h2>Environment Variable Test</h2>
-      <p>
-        If you see &quot;placeholder&quot; values below, the .env.local file is being
-        read correctly. We will replace these with real Firebase values in Step 8.
-      </p>
-      <ul style={{ marginTop: '1rem', lineHeight: '2' }}>
-        <li><strong>MODE:</strong>{import.meta.env.MODE}</li>
-        <li><strong>DEV:</strong>{import.meta.env.DEV ? 'true' : 'false'}</li>
-        <li><strong>APP-NAME:</strong>{import.meta.env.VITE_APP_NAME}</li>
-        <li><strong>PROJECT-ID:</strong>{import.meta.env.VITE_FIREBASE_PROJECT_ID}</li>
-        <li><strong>API Key (first 10 chars)::</strong>{''}
-          {import.meta.env.VITE_FIREBASE_API_KEY?.substring(0, 10)}...</li>
-      </ul>
-      <h2>Security Test</h2>
-      <p>
-        Variables WITHOUT the VITE_ prefix should be undefined.
-        This proves Vite&apos;s security filtering works:
-      </p>
-      <ul style={{ marginTop: '1rem', lineHeight: '2' }}>
-        <li>
-          <strong>SECRET_KEY (no VITE_ prefix):</strong>{' '}
-          {import.meta.env.SECRET_KEY || '✅ undefined (correct — not exposed)'}
-        </li>
-      </ul>
+        {/* Color palette test */}
+        <div className="space-y-3">
+          <h2 className="text-sm font-semibold uppercase tracking-wider text-content-tertiary">
+            Design Tokens Test
+          </h2>
+
+          {/* Brand color */}
+          <div className="flex items-center gap-3">
+            <div className="h-8 w-8 rounded-lg bg-brand-500" />
+            <span className="text-sm text-content-secondary">
+              Brand (bg-brand-500)
+            </span>
+          </div>
+
+          {/* Success color */}
+          <div className="flex items-center gap-3">
+            <div className="h-8 w-8 rounded-lg bg-success-500" />
+            <span className="text-sm text-content-secondary">
+              Success (bg-success-500)
+            </span>
+          </div>
+
+          {/* Warning color */}
+          <div className="flex items-center gap-3">
+            <div className="h-8 w-8 rounded-lg bg-warning-500" />
+            <span className="text-sm text-content-secondary">
+              Warning (bg-warning-500)
+            </span>
+          </div>
+
+          {/* Danger color */}
+          <div className="flex items-center gap-3">
+            <div className="h-8 w-8 rounded-lg bg-danger-500" />
+            <span className="text-sm text-content-secondary">
+              Danger (bg-danger-500)
+            </span>
+          </div>
+        </div>
+
+        {/* Shadow test */}
+        <div className="space-y-3">
+          <h2 className="text-sm font-semibold uppercase tracking-wider text-content-tertiary">
+            Shadow & Animation Test
+          </h2>
+          <div className="rounded-lg bg-surface p-4 shadow-card transition-shadow duration-200 hover:shadow-card-hover">
+            <p className="text-sm text-content-secondary">
+              Hover me — I have card shadow transition
+            </p>
+          </div>
+        </div>
+
+        {/* Skeleton test */}
+        <div className="space-y-3">
+          <h2 className="text-sm font-semibold uppercase tracking-wider text-content-tertiary">
+            Skeleton Loading Test
+          </h2>
+          <div className="space-y-2">
+            <div className="skeleton h-4 w-3/4 rounded" />
+            <div className="skeleton h-4 w-1/2 rounded" />
+            <div className="skeleton h-4 w-5/6 rounded" />
+          </div>
+        </div>
+
+        {/* Button-like test */}
+        <div className="flex gap-3">
+          <button
+            type="button"
+            className="rounded-lg bg-brand-500 px-4 py-2 text-sm font-medium text-content-inverse transition-colors duration-150 hover:bg-brand-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500"
+          >
+            Primary
+          </button>
+          <button
+            type="button"
+            className="rounded-lg border border-surface-border bg-surface px-4 py-2 text-sm font-medium text-content-primary transition-colors duration-150 hover:bg-surface-sunken"
+          >
+            Secondary
+          </button>
+          <button
+            type="button"
+            className="rounded-lg bg-danger-500 px-4 py-2 text-sm font-medium text-content-inverse transition-colors duration-150 hover:bg-danger-600"
+          >
+            Danger
+          </button>
+        </div>
+
+        {/* Footer */}
+        <p className="text-center text-xs text-content-tertiary">
+          ✅ If this page is styled with colors, shadows, and animations —
+          Tailwind CSS is working correctly!
+        </p>
+      </div>
     </div>
   );
 }
