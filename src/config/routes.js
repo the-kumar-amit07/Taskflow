@@ -10,26 +10,25 @@
  * Good: <Link to={ROUTES.WORKSPACE_BOARDS(123)}>  ← IDE autocomplete
  */
 
-
 export const ROUTES = {
-    // Public routes
-    LOGIN: '/login',
+  // Public routes
+  LOGIN: '/login',
 
-    // Protected routes
-    HOME: '/',
-    DASHBOARD: '/dashboard',
+  // Protected routes
+  HOME: '/',
+  DASHBOARD: '/dashboard',
 
-    //Workspace routes
-    WORKSPACE: '/workspace/:workspaceId',
-    WORKSPACE_SETTINGS:'/workspace/:workspaceId/settings',
-    WORKSPACE_MEMBERS: '/workspace/:workspaceId/members',
-    
-    // Board routes
-    BOARD: '/board/:boardId',
+  //Workspace routes
+  WORKSPACE: '/workspace/:workspaceId',
+  WORKSPACE_SETTINGS: '/workspace/:workspaceId/settings',
+  WORKSPACE_MEMBERS: '/workspace/:workspaceId/members',
 
-    // Catch-all
-    NOT_FOUND:'*',
-}
+  // Board routes
+  BOARD: '/board/:boardId',
+
+  // Catch-all
+  NOT_FOUND: '*',
+};
 
 /**
  * Route path builder functions.
@@ -39,8 +38,8 @@ export const ROUTES = {
  */
 
 export const buildPath = {
-    workspace: (workspaceId) => `/workspace/${workspaceId}`,
-    workspaceSettings: (workspaceId) => `/workspace/${workspaceId}/settings`,
-    workspaceMembers: (workspaceId) => `/workspace/${workspaceId}/members`,
-    board: (boardId) => `/board/${boardId}`,
+  workspace: (workspaceId) => `/workspace/${workspaceId}`,
+  workspaceSettings: (workspaceId) => `/workspace/${workspaceId}/settings`,
+  workspaceMembers: (workspaceId) => `/workspace/${workspaceId}/members`,
+  board: (boardId) => `/board/${boardId}`,
 };

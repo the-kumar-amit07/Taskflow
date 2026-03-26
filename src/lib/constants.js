@@ -22,19 +22,19 @@
  * Ordered by permission level (highest to lowest).
  */
 export const ROLES = {
-    OWNER: "owner",
-    ADMIN: "admin",
-    MEMBER: "member",
-    VIEWER: "viewer"
+  OWNER: 'owner',
+  ADMIN: 'admin',
+  MEMBER: 'member',
+  VIEWER: 'viewer',
 };
 
 /**
  * Board visibility options.
  */
 export const BOARD_VISIBILITY = {
-    PRIVATE: "private",
-    WORKSPACE: "workspace",
-    PUBLIC: "public",
+  PRIVATE: 'private',
+  WORKSPACE: 'workspace',
+  PUBLIC: 'public',
 };
 
 /**
@@ -42,31 +42,31 @@ export const BOARD_VISIBILITY = {
  * These are the color options shown when creating a new board.
  */
 export const BOARD_COLORS = [
-    { name: "sky", value: '#0079BF' },
-    { name: "Emerald", value: '#519839' },
-    { name: "Violet", value: '#89609E' },
-    { name: "Sunset", value: '#FF6B35' },
-    { name: "Tangerine", value: '#D29034' },
-    { name: "Crimson", value: '#B04632' },
-    { name: "Slate", value: '#4C4C4C' },
-    { name: "Ocean", value: '#0079BF' },
-]
+  { name: 'sky', value: '#0079BF' },
+  { name: 'Emerald', value: '#519839' },
+  { name: 'Violet', value: '#89609E' },
+  { name: 'Sunset', value: '#FF6B35' },
+  { name: 'Tangerine', value: '#D29034' },
+  { name: 'Crimson', value: '#B04632' },
+  { name: 'Slate', value: '#4C4C4C' },
+  { name: 'Ocean', value: '#0079BF' },
+];
 
 /**
  * Card label colors.
  * These are the label color options for card labels.
  */
 export const LABEL_COLORS = [
-    { name: 'Green', value: '#61BD4F' },
-    { name: 'Yellow', value: '#F2D600' },
-    { name: 'Orange', value: '#FF9F1A' },
-    { name: 'Red', value: '#EB5A46' },
-    { name: 'Purple', value: '#C377E0' },
-    { name: 'Blue', value: '#0079BF' },
-    { name: 'Teal', value: '#00C2E0' },
-    { name: 'Lime', value: '#51E898' },
-    { name: 'Pink', value: '#FF78CB' },
-    { name: 'Black', value: '#344563' },
+  { name: 'Green', value: '#61BD4F' },
+  { name: 'Yellow', value: '#F2D600' },
+  { name: 'Orange', value: '#FF9F1A' },
+  { name: 'Red', value: '#EB5A46' },
+  { name: 'Purple', value: '#C377E0' },
+  { name: 'Blue', value: '#0079BF' },
+  { name: 'Teal', value: '#00C2E0' },
+  { name: 'Lime', value: '#51E898' },
+  { name: 'Pink', value: '#FF78CB' },
+  { name: 'Black', value: '#344563' },
 ];
 
 /**
@@ -77,20 +77,20 @@ export const LABEL_COLORS = [
  * Good: collection(db, COLLECTIONS.WORKSPACES)  ← IDE autocomplete
  */
 export const COLLECTIONS = {
-    USERS: 'users',
-    WORKSPACES: 'workspaces',
-    WORKSPACE_MEMBERS: 'workspaceMembers',
-    BOARDS: 'boards',
-    BOARD_MEMBERS: 'boardMembers',
-    LISTS: 'lists',
-    CARDS: "cards",
-    LABELS: "labels",
-    COMMENTS: "comments",
-    CHECKLISTS: "checklists",
-    CHECKLIST_ITEMS: "checklistItems",
-    ACTIVITY_LOG: "activityLog",
-    CARD_ATTACHMENTS: "cardAttachments",
-}
+  USERS: 'users',
+  WORKSPACES: 'workspaces',
+  WORKSPACE_MEMBERS: 'workspaceMembers',
+  BOARDS: 'boards',
+  BOARD_MEMBERS: 'boardMembers',
+  LISTS: 'lists',
+  CARDS: 'cards',
+  LABELS: 'labels',
+  COMMENTS: 'comments',
+  CHECKLISTS: 'checklists',
+  CHECKLIST_ITEMS: 'checklistItems',
+  ACTIVITY_LOG: 'activityLog',
+  CARD_ATTACHMENTS: 'cardAttachments',
+};
 
 /**
  * Drag and drop type identifiers.
@@ -98,25 +98,25 @@ export const COLLECTIONS = {
  * between dragging lists vs. dragging cards.
  */
 export const DND_TYPES = {
-    LIST: 'LIST',
-    CARD: 'CARD',
-}
+  LIST: 'LIST',
+  CARD: 'CARD',
+};
 
 /**
  * Pagination defaults.
  */
 export const PAGINATION = {
-    BOARDS_PER_PAGE: 12,
-    CARDS_PER_PAGE: 50,
-    ACTIVITY_PER_PAGE: 20,
-    COMMENTS_PER_PAGE: 20,
-}
+  BOARDS_PER_PAGE: 12,
+  CARDS_PER_PAGE: 50,
+  ACTIVITY_PER_PAGE: 20,
+  COMMENTS_PER_PAGE: 20,
+};
 
 /**
  * Debounce delays (in milliseconds).
  */
 export const DEBOUNCE = {
-    SEARCH: 300, // 0.3 seconds
-    AUTOSAVE: 200, // 0.2 seconds
-    RESIZE: 150, // 0.15 seconds
-}
+  SEARCH: 300, // 0.3 seconds
+  AUTOSAVE: 200, // 0.2 seconds
+  RESIZE: 150, // 0.15 seconds
+};

@@ -22,16 +22,15 @@
  * Your production build will render normally (once).
  */
 
-
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './styles/index.css'
-import App from './App.jsx'
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import './styles/index.css';
+import App from './App.jsx';
 
 // Get the root element from the HTML. This is where our React app will be mounted.
-const rootElement = document.getElementById('root')
+const rootElement = document.getElementById('root');
 
-// Fail fast if root element is not found. This prevents silent failures and makes it clear that the HTML structure is incorrect. The app cannot run without a root element.  
+// Fail fast if root element is not found. This prevents silent failures and makes it clear that the HTML structure is incorrect. The app cannot run without a root element.
 if (!rootElement) {
   throw new Error(
     "Root element not found. Make sure there is a <div id='root'></div> in your index.html."
@@ -44,5 +43,5 @@ const root = createRoot(rootElement);
 root.render(
   <StrictMode>
     <App />
-  </StrictMode>,
-)
+  </StrictMode>
+);

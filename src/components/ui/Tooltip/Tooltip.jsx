@@ -10,5 +10,5 @@
  */
 
 export default function Tooltip({ children, content }) {
-    return <div title={content}>{children}</div>
+  return <div title={content}>{children}</div>;
 }

@@ -166,14 +166,14 @@
     Custom utility classes that Tailwind does not provide.
 */
 @layer utilities {
-    /**
+  /**
    * Text balance — Better text wrapping for headings
    * Distributes text more evenly across lines.
    */
   .text-balance {
     text-wrap: balance;
   }
-  
+
   /**
    * Hide scrollbar but keep scrolling functional.
    * Used for horizontally scrolling board view.

@@ -15,9 +15,9 @@
  */
 
 export default function LoadingScreen() {
-    return (
-        <div role="status" aria-label="Loading application">
-        <p>Loading TaskFlow...</p>
-        </div>
-    );
+  return (
+    <div role="status" aria-label="Loading application">
+      <p>Loading TaskFlow...</p>
+    </div>
+  );
 }

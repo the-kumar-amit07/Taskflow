@@ -13,5 +13,5 @@
  */
 
 export default function Navbar() {
-    return <nav>Navbar</nav>
+  return <nav>Navbar</nav>;
 }

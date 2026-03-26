@@ -1,0 +1,36 @@
+# FILE: .prettierignore
+
+# ============================================
+# Files Prettier should NOT format
+# ============================================
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Package manager files (auto-generated, precise formatting required)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Firebase
+.firebase/
+
+# Coverage reports
+coverage/
+
+# Environment files
+.env
+.env.*
+
+# Editor config
+.vscode/
+.idea/
+
+# Markdown files (optional — Prettier CAN format .md, but sometimes
+# it restructures tables and lists in unwanted ways)
+# Uncomment the line below if you prefer to format Markdown manually:
+# *.md

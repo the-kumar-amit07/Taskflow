@@ -8,6 +8,6 @@
  *
  */
 
-export default function ContentArea({ children }) { 
-    return <main>{children}</main>
+export default function ContentArea({ children }) {
+  return <main>{children}</main>;
 }

@@ -15,6 +15,6 @@
  */
 
 export default function RoleGuard({ children, requiredRole }) {
-    // Implementation for role-based access control logic
-    return children;
+  // Implementation for role-based access control logic
+  return children;
 }

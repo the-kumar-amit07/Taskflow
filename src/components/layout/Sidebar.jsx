@@ -12,5 +12,5 @@
  */
 
 export default function Sidebar() {
-    return <aside>Sidebar</aside>;
+  return <aside>Sidebar</aside>;
 }

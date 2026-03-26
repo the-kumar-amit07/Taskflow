@@ -21,6 +21,6 @@
  * Will be implemented in Step 25.
  */
 
-export default function AppLayout({children}) {
-    return <div>{children}</div>
+export default function AppLayout({ children }) {
+  return <div>{children}</div>;
 }

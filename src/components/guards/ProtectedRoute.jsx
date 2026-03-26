@@ -12,8 +12,7 @@
  *
  */
 
-
 export default function ProtectedRoute({ children }) {
-    // Implementation for protected route logic
-    return children;
+  // Implementation for protected route logic
+  return children;
 }

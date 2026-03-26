@@ -16,6 +16,13 @@
  *
  */
 
-export default function Skeleton(width, height, className = '') {
-    return <div className={className} style={{ width, height }}/>
+export default function Skeleton({ width, height, className = '' }) {
+  return (
+    <div
+      className={`skeleton ${className}`}
+      style={{ width, height }}
+      role="status"
+      aria-label="Loading"
+    />
+  );
 }

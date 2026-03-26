@@ -9,5 +9,5 @@
  */
 
 export default function Badge({ children }) {
-    return <div>{children}</div>
+  return <div>{children}</div>;
 }

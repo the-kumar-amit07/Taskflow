@@ -14,9 +14,7 @@ function App() {
       <div className="w-full max-w-md space-y-6 rounded-xl bg-surface p-8 shadow-lg">
         {/* App title with brand color */}
         <div className="text-center">
-          <h1 className="text-3xl font-bold text-content-primary">
-            TaskFlow
-          </h1>
+          <h1 className="text-3xl font-bold text-content-primary">TaskFlow</h1>
           <p className="mt-2 text-sm text-content-secondary">
             Project management for modern teams
           </p>

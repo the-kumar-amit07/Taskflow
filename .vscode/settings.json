@@ -1,0 +1,36 @@
+{
+  "// ABOUT": "VS Code workspace settings for TaskFlow project",
+
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  "editor.formatOnSave": true,
+
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+
+  "editor.tabSize": 2,
+
+  "editor.rulers": [80],
+
+  "files.eol": "\n",
+
+  "files.trimTrailingWhitespace": true,
+
+  "files.insertFinalNewline": true,
+
+  "css.validate": false,
+
+  "eslint.useFlatConfig": true,
+
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/.firebase": true,
+    "**/package-lock.json": true
+  }
+}

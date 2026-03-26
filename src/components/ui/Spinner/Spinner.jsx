@@ -10,10 +10,10 @@
  * Will be implemented alongside other UI components.
  */
 
-export default function Spinner({size = 'md'}) { 
-    return (
-        <div role="status" aria-label='loading' className={`spinner-${size}`}>
-            <span>Loading...</span>
-        </div>
-    )
+export default function Spinner({ size = 'md' }) {
+  return (
+    <div role="status" aria-label="loading" className={`spinner-${size}`}>
+      <span>Loading...</span>
+    </div>
+  );
 }
