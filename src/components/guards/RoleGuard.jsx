@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 // FILE: src/components/guards/RoleGuard.jsx
 
 /**
@@ -14,7 +13,8 @@
  * Will be implemented alongside workspace member management.
  */
 
-export default function RoleGuard({ children, requiredRole }) {
-  // Implementation for role-based access control logic
+export default function RoleGuard({ children, requiredRole: _requiredRole }) {
+  // TODO: Implement role checking logic
+  // _requiredRole will be used when auth system is built
   return children;
 }

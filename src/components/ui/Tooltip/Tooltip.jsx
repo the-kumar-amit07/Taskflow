@@ -10,5 +10,9 @@
  */
 
 export default function Tooltip({ children, content }) {
-  return <div title={content}>{children}</div>;
+  return (
+    <div role="tooltip" aria-label={content} title={content}>
+      {children}
+    </div>
+  );
 }

@@ -11,9 +11,19 @@
  */
 
 export default function Spinner({ size = 'md' }) {
+  const sizeClasses = {
+    sm: 'h4 w-4',
+    md: 'h-6 w-6',
+    lg: 'h-8 w-8',
+  };
+
   return (
-    <div role="status" aria-label="loading" className={`spinner-${size}`}>
-      <span>Loading...</span>
+    <div
+      role="status"
+      aria-label="loading"
+      className={sizeClasses[size] || sizeClasses.md}
+    >
+      <span className="sr-only">Loading...</span>
     </div>
   );
 }

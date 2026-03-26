@@ -1,4 +1,3 @@
- 
 // FILE: src/components/feedback/ErrorBoundary.jsx
 
 /**
@@ -16,8 +15,6 @@
  * IMPORTANT: Error boundaries MUST be class components.
  * React does not support error boundaries with hooks (as of React 19).
  * This is one of the very few cases where class components are still needed.
- *
-
  */
 
 import { Component } from 'react';
@@ -25,7 +22,7 @@ import { Component } from 'react';
 export default class ErrorBoundary extends Component {
   constructor(props) {
     super(props);
-    this.state = { hasError: false };
+    this.state = { hasError: false, error: null };
   }
 
   static getDerivedStateFromError() {
@@ -33,9 +30,33 @@ export default class ErrorBoundary extends Component {
     return { hasError: true };
   }
 
+  componentDidCatch(error, errorInfo) {
+    // Log error to an error reporting service in production
+    // For now, log to console
+    console.error('ErrorBoundary caught an error', error, errorInfo);
+  }
+
   render() {
     if (this.state.hasError) {
-      return <div>Something went wrong.Please refresh the page.</div>;
+      if (this.props.fallback) {
+        return this.props.fallback;
+      }
+      return (
+        <div role="alert" className="p-6 text-center">
+          <h2 className="text-lg font-semibold text-content-primary">
+            Something went wrong.
+          </h2>
+          <p className="mt-2 text-sm text-content-secondary">
+            An unexpected error occurred. Please refresh the page.
+          </p>
+          <button
+            onClick={() => window.location.reload()}
+            className="mt-4 rounded-lg bg-brand-500 px-4 py-2 text-sm font-semibold text-white hover:bg-brand-600"
+          >
+            Refresh Page
+          </button>
+        </div>
+      );
     }
     return this.props.children;
   }
