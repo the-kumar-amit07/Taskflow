@@ -1,11 +1,18 @@
 // FILE: src/App.jsx
 
 /**
- * App Component — Tailwind CSS Verification
+ * App Component — The Root of the Component Tree
  *
- * Temporarily using Tailwind utility classes to verify the setup.
- * If you see styled content (colors, spacing, shadows), Tailwind is working.
- * We will clean this up after verification.
+ * This is the top-level component that every other component
+ * in our application will be a child of.
+ *
+ * Right now, it is intentionally simple — just a placeholder.
+ * As we build the application, this component will grow to include:
+ * - Redux Provider (state management)
+ * - React Router (routing)
+ * - Auth state observer
+ * - Toast notification container
+ * - Error boundary
  */
 
 function App() {
