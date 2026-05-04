@@ -82,8 +82,8 @@ const ENV_SCHEMA = [
   },
   {
     key: 'VITE_FIREBASE_STORAGE_BUCKET',
-    description: 'Firebase Storage bucket (e.g., your-project.appspot.com)',
-    required: true,
+    description: 'Firebase Storage bucket (OPTIONAL — we use Cloudinary for file uploads instead)',
+    required: false,
   },
   {
     key: 'VITE_FIREBASE_MESSAGING_SENDER_ID',
@@ -109,6 +109,16 @@ const ENV_SCHEMA = [
   {
     key: 'VITE_APP_URL',
     description: 'Base URL of the application (used for API calls)',
+    required: false,
+  },
+  {
+    key: 'VITE_CLOUDINARY_CLOUD_NAME',
+    description:'Cloudinary cloud name from dashboard (Settings → Account → Cloud name)',
+    required: false, // Optional until we implement file uploads 
+  },
+  {
+    key: 'VITE_CLOUDINARY_UPLOAD_PRESET',
+    description:'Cloudinary unsigned upload preset name (must be created in Cloudinary console)',
     required: false,
   },
 ];
@@ -192,6 +202,11 @@ export const env = {
     messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
     appId: import.meta.env.VITE_FIREBASE_APP_ID,
     measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
+  },
+  // Cloudinary config:
+  cloudinary: {
+    cloudName: import.meta.env.VITE_CLOUDINARY_CLOUD_NAME || '',
+    uploadPreset: import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET || 'taskflow_attachments',
   },
   app: {
     name: import.meta.env.VITE_APP_NAME || 'TaskFlow',
